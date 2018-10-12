@@ -17,11 +17,14 @@
    outputArray(placesToVisit);
 
    placesToVisit.shift();
-   document.write("Wait, I visited the first one. Let's take it off:<br/><br/>");
+   document.write("<br/>Wait, I visited the first one. Let's take it off:<br/><br/>");
 
    outputArray(placesToVisit);
+   placesToVisit.sort();
 
+   document.write("<br/>Let's sort these alphabetically:<br/><br/>");
 
+   outputArray(placesToVisit);
   </script>
  </body>
 </html>
