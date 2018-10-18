@@ -40,15 +40,15 @@ function wreckMyArray2 ( theArray )
 
 function onlyHaveIsForYou ( iAnalysis )
 {
-  var i = 1
+  var i = 0 
 
   document.write("<br/>");
   for (x in iAnalysis) 
   {
    if ( iAnalysis.charAt(x) === "i" )
    {
-    document.write("i number " + i + " is located at position " + x + "<br/>");
     i++;
+    document.write("i number " + i + " is located at position " + x + "<br/>");
    }
   }
 
