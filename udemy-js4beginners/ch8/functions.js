@@ -24,6 +24,7 @@ function wreckMyArray( theArray )
    theArray[x] = "X";
   }
 
+ } // End for in loop
+
  return theArray;
- }
 } // End wreckMyArray
