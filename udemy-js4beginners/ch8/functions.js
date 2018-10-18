@@ -10,16 +10,16 @@ function wreckMyArray( theArray )
  for (x in theArray)
  {
   theChar = theArray.charAt(x);
-  if ( theChar === "a" || 
-       theChar === "A" ||
-       theChar === "e" ||
-       theChar === "E" ||
-       theChar === "i" ||
-       theChar === "I" ||
-       theChar === "o" ||
-       theChar === "O" ||
-       theChar === "u" ||
-       theChar === "U") 
+  if ( theChar == "a" || 
+       theChar == "A" ||
+       theChar == "e" ||
+       theChar == "E" ||
+       theChar == "i" ||
+       theChar == "I" ||
+       theChar == "o" ||
+       theChar == "O" ||
+       theChar == "u" ||
+       theChar == "U") 
   {
    theArray[x] = "X";
   }
