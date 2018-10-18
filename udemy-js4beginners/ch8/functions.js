@@ -37,7 +37,7 @@ function wreckMyArray2 ( theArray )
 
  wreckedArray.toString();
 
- document.write("<br/> Writing the wreckedArray that's been stringified within the wMA2 function: <br/>" + wreckMyArray2 );
+ document.write("<br/> Writing the wreckedArray that's been stringified within the wMA2 function: <br/>" + wreckedArray );
 
  return wreckedArray;
 }
