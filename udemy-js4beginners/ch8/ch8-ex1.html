@@ -33,9 +33,10 @@
    var goodArray = badString.split(",")
 
    document.write("In unrelated news, here's your goodArray:<br/>" + goodArray);
-   document.write("<br/><br/>And let me break that down for you:<br/>");
+   goodArray.sort();
+   document.write("<br/><br/>And let me sort that, then break that down for you:<br/>");
    for (x in goodArray) {
-    document.write(goodArray[x]);
+    document.write(goodArray[x] + "<br/>");
    }
    document.write("<br/><br/>");
   </script>
