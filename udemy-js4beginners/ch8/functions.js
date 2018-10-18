@@ -23,7 +23,7 @@ function wreckMyArray( theArray )
   {
    theArray[x] = "X";
   }
-
+  document.write(theArray.charAt(x)+"<br/>");
  } // End for in loop
 
  return theArray;
