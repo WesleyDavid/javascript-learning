@@ -35,5 +35,5 @@ function wreckMyArray2 ( theArray )
   wreckedArray.push(theChar)
  }
 
- return wreckedArray;
+ return wreckedArray.toString();
 }
