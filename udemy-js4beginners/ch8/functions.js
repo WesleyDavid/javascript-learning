@@ -11,8 +11,10 @@ function wreckMyArray( theArray )
  {
   theChar = theArray.charAt(x);
   if (theChar == "i") {
-   document.write("This is an 'i'");
+   document.write("This is an 'i'<br/>");
   }
+  document.write("Current index: " + theArray[x] + "<br/>");
+
 
 /*
   if ( theChar == "a" || 
