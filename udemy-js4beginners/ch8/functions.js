@@ -10,6 +10,11 @@ function wreckMyArray( theArray )
  for (x in theArray)
  {
   theChar = theArray.charAt(x);
+  if (theChar == "i") {
+   document.write("This is an 'i'");
+  }
+
+/*
   if ( theChar == "a" || 
        theChar == "A" ||
        theChar == "e" ||
@@ -25,6 +30,7 @@ function wreckMyArray( theArray )
   }
   document.write(theArray.charAt(x)+"<br/>");
  } // End for in loop
+*/
 
  return theArray;
 } // End wreckMyArray
