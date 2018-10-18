@@ -16,8 +16,8 @@
 
    outputArray(placesToVisit);
 
-   placesToVisit.shift();
-   document.write("<br/>Wait, I visited the first one. Let's take it off:<br/><br/>");
+   placesToVisit.splice(0,2);
+   document.write("<br/>Wait, I visited the first two. Let's take them off:<br/><br/>");
 
    outputArray(placesToVisit);
    placesToVisit.sort();
