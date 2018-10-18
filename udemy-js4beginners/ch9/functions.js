@@ -18,7 +18,7 @@ function gimmeScreenInfo() {
 } //End gimmeScreenInfo()
 
 function changeWindowStuff () {
-// var myWindow = window.open();
- window.resizeBy(300,300);
- window.moveTo(0,0);
+ var myWindow = window.open();
+ myWindow.resizeBy(300,300);
+ myWindow.moveTo(0,0);
 } //End changeWindowStuff()
