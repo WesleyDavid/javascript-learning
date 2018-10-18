@@ -16,3 +16,8 @@ function gimmeScreenInfo() {
   "Screen width: " + screen.width + "<br/><br/>"
  );
 } //End gimmeScreenInfo()
+
+function changeWindowStuff () {
+ window.resizeBy(300,300);
+ window.moveTo(0,0);
+} //End changeWindowStuff()
