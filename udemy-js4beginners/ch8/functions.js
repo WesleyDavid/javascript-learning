@@ -52,5 +52,5 @@ function onlyHaveIsForYou ( iAnalysis )
    }
   }
 
- document.write("There are " + i + " total i's in the string.<br/><br/>");
+ document.write("There are " + i + " total i's in the string which has " + iAnalysis.length + " total characters.<br/><br/>");
 } // End iAnalysis()
