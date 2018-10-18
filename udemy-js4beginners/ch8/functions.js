@@ -14,6 +14,8 @@ function wreckMyArray( theArray )
    document.write("This is an 'i'<br/>");
   }
   document.write("Current index: " + theArray[x] + "<br/>");
+  theArray[x] = "X";
+  document.write("I just changed " + theArray[x] + " to 'X' supposedly.");
 
 
 /*
