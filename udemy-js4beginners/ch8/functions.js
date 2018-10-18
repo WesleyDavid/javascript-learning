@@ -5,38 +5,6 @@
 
 function wreckMyArray( theArray )
 {
- var theChar
-
- for (x in theArray)
- {
-  theChar = theArray.charAt(x);
-  if (theChar == "i") {
-   document.write("This is an 'i'<br/>");
-  }
-  document.write("Current index: " + theArray[x] + "<br/>");
-  theArray[x] = "X";
-  document.write("I just changed " + theArray[x] + " to 'X' supposedly.");
-
-
-/*
-  if ( theChar == "a" || 
-       theChar == "A" ||
-       theChar == "e" ||
-       theChar == "E" ||
-       theChar == "i" ||
-       theChar == "I" ||
-       theChar == "o" ||
-       theChar == "O" ||
-       theChar == "u" ||
-       theChar == "U") 
-  {
-   theArray[x] = "X";
-  }
-  document.write(theArray.charAt(x)+"<br/>");
-*/
-
- } // End for in loop
-
-
- return theArray;
+ //I get it, this function is pointless. Leave me alone. :P
+ return theArray.replace(/[aeiou]/ig,"X");
 } // End wreckMyArray
