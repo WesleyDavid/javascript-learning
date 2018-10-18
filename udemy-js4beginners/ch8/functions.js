@@ -35,5 +35,9 @@ function wreckMyArray2 ( theArray )
   wreckedArray.push(theChar)
  }
 
- return wreckedArray.toString();
+ wreckedArray.toString();
+
+ document.write("<br/> Writing the wreckedArray that's been stringified within the wMA2 function: <br/>" + wreckMyArray2 );
+
+ return wreckedArray;
 }
