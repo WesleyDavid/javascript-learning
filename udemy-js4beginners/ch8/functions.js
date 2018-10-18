@@ -47,7 +47,7 @@ function onlyHaveIsForYou ( iAnalysis )
   {
    if ( iAnalysis.charAt(x) === "i" )
    {
-    document.write("i number " + i + " is located at position " + iAnalysis.charAt(x) + "<br/>");
+    document.write("i number " + i + " is located at position " + x + "<br/>");
     i++;
    }
   }
