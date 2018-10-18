@@ -37,3 +37,20 @@ function wreckMyArray2 ( theArray )
 
  return wreckedArray.join("");
 }
+
+function onlyHaveIsForYou ( iAnalysis )
+{
+  var i = 1
+
+  document.write("<br/>");
+  for (x in iAnalysis) 
+  {
+   if ( iAnalysis.charAt(x) === "i" )
+   {
+    document.write("i number " + i + " is located at position " + iAnalysis.charAt(x) + "<br/>");
+    i++;
+   }
+  }
+
+ document.write("There are " + i + " total i's in the string.<br/><br/>");
+} // End iAnalysis()
