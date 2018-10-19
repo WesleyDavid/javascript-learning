@@ -9,7 +9,7 @@ if (johnsTeamScoresAvg < mikesTeamScoresAvg) {
 } else if ( johnsTeamScoresAvg === mikesTeamScoresAvg ) {
  console.log("John and Mike's teams score an identical amount of points on avereage at " + johnsTeamScoresAvg);
 } else {
- console.log?("John's team scores more with an average of " + johnsTeamScoresAvg);
+ console.log("John's team scores more with an average of " + johnsTeamScoresAvg);
 }
 
 
