@@ -38,6 +38,9 @@ function email() {
  {
   document.getElementById('emailError').innerHTML = "<-- Email address can't be empty";
   document.getElementById('email').style['background-color'] = "red";
+ } else if (email.length <= 2 ) {
+  document.getElementById('emailError').innerHTML = "<-- Email address must be more than 2 characters."
+  document.getElementById('email').style['background-color'] = "red";
  } else {
   document.getElementById('emailError').innerHTML = null;
   document.getElementById('email').removeAttribute("style");
@@ -51,6 +54,9 @@ function phone() {
  if (phone === null || phone === "")
  {
   document.getElementById('phoneError').innerHTML = "<-- Phone number can't be empty";
+  document.getElementById('phone').style['background-color'] = "red";
+ } else if ( phone.length <= 2 ) {
+  document.getElementById('phoneError').innerHTML = "<-- Phone number must be more than 2 characters."
   document.getElementById('phone').style['background-color'] = "red";
  } else {
   document.getElementById('phoneError').innerHTML = null;
