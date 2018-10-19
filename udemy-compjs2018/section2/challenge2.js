@@ -14,10 +14,10 @@ switch (true) {
   console.log("Mike's team has the highest average score per game of " + mikesTeamScoresAvg);
  break;
  case marysTeamScores > mikesTeamScoresAvg && marysTeamScores > johnsTeamScoresAvg:
-  console.log("Mary's team has the highest average score per game of " + marysTeamScores);
+  console.log("Mary's team has the highest average score per game of " + marysTeamScoresAvg);
  break;
  default:
-  console.log("All three players' have an identical average score per game of " + marysTeamScores);
+  console.log("All three players' have an identical average score per game of " + marysTeamScoresAvg);
 }
 
 function calculateAvgScores( scores ) {
