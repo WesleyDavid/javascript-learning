@@ -19,7 +19,7 @@ function lastName() {
 
  if (last === null || last === "")
  {
-  document.getElementById('lastError').innerHTML = "<-- Last name can't be empty";
+  document.getElementById('lastNameError').innerHTML = "<-- Last name can't be empty";
   document.getElementById('lastName').style['background-color'] = "red";
  } else {
   document.getElementById('lastNameError').innerHTML = null;
