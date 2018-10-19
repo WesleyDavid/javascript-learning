@@ -6,7 +6,7 @@ function firstName() {
  if (first === null || first === "")
  {
   document.getElementById('firstError').innerHTML = "<-- First name can't be empty";
-  document.getElementById('firstName').style.color = "red";
+  document.getElementById('firstName').style.background-color = "red";
  } else {
   document.getElementById('firstError').innerHTML = null;
   document.getElementById('firstName').removeAttribute("style");
