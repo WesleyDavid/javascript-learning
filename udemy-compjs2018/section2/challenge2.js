@@ -1,17 +1,24 @@
 var johnsTeamScores = [89,120,124];
 var mikesTeamScores = [116,94,123];
+var marysTeamScores = [97,134,105];
 
 var johnsTeamScoresAvg = calculateAvgScores(johnsTeamScores);
 var mikesTeamScoresAvg = calculateAvgScores(mikesTeamScores);
+var marysTeamScoresAvg = calculateAvgScores(marysTeamScores);
 
-if (johnsTeamScoresAvg < mikesTeamScoresAvg) {
- console.log("Mike's team scores more with an average of " + mikesTeamScoresAvg);
-} else if ( johnsTeamScoresAvg === mikesTeamScoresAvg ) {
- console.log("John and Mike's teams score an identical amount of points on avereage at " + johnsTeamScoresAvg);
-} else {
- console.log("John's team scores more with an average of " + johnsTeamScoresAvg);
+switch (true) {
+ case johnsTeamScoresAvg > mikesTeamScoresAvg && johnsTeamScoresAvg > marysTeamScoresAvg:
+  console.log("John's team has the highest average score per game of " + johnsTeamScoresAvg);
+ break;
+ case mikesTeamScoresAvg > marysTeamScoresAvg && mikesTeamScoresAvg > johnsTeamScoresAvg:
+  console.log("Mike's team has the highest average score per game of " + mikesTeamScoresAvg);
+ break;
+ case marysTeamScores > mikesTeamScoresAvg && marysTeamScores > johnsTeamScoresAvg:
+  console.log("Mary's team has the highest average score per game of " + marysTeamScores);
+ break;
+ default:
+  console.log("All three players' have an identical average score per game of " + marysTeamScores);
 }
-
 
 function calculateAvgScores( scores ) {
  var totalPoints = 0;
