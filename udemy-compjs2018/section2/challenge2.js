@@ -9,15 +9,27 @@ var marysTeamScoresAvg = calculateAvgScores(marysTeamScores);
 switch (true) {
  case johnsTeamScoresAvg > mikesTeamScoresAvg && johnsTeamScoresAvg > marysTeamScoresAvg:
   console.log("John's team has the highest average score per game of " + johnsTeamScoresAvg);
- break;
+  break;
  case mikesTeamScoresAvg > marysTeamScoresAvg && mikesTeamScoresAvg > johnsTeamScoresAvg:
   console.log("Mike's team has the highest average score per game of " + mikesTeamScoresAvg);
- break;
+  break;
  case marysTeamScoresAvg > mikesTeamScoresAvg && marysTeamScoresAvg > johnsTeamScoresAvg:
   console.log("Mary's team has the highest average score per game of " + marysTeamScoresAvg);
- break;
- default:
+  break;
+ case johnsTeamScoresAvg === mikesTeamScoresAvg && johnsTeamScoresAvg !== marysTeamScoresAvg:
+  console.log("John and Mike's teams have tied for highest scoring average at " + mikesTeamScoresAvg);
+  break
+ case johnsTeamScoresAvg === marysTeamScoresAvg && johnsTeamScoresAvg !== mikesTeamScoresAvg:
+  console.log("John and Mary's teams have tied for highest scoring average at " + marysTeamScoresAvg);
+  break;
+ case marysTeamScoresAvg === mikesTeamScoresAvg && marysTeamScoresAvg !== johnsTeamScoresAvg):
+  console.log("Mary and Mike's teams have tied for highest scoring average at " + marysTeamScoresAvg);
+  break;
+ case marysTeamScoresAvg === mikesTeamScoresAvg && marysTeamScoresAvg === johnsTeamScoresAvg:
   console.log("All three players' have an identical average score per game of " + marysTeamScoresAvg);
+  break;
+ default:
+  console.log("Something very unusual has happened. Check your code.");
 }
 
 function calculateAvgScores( scores ) {
