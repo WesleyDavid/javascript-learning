@@ -13,7 +13,7 @@ switch (true) {
  case mikesTeamScoresAvg > marysTeamScoresAvg && mikesTeamScoresAvg > johnsTeamScoresAvg:
   console.log("Mike's team has the highest average score per game of " + mikesTeamScoresAvg);
  break;
- case marysTeamScores > mikesTeamScoresAvg && marysTeamScores > johnsTeamScoresAvg:
+ case marysTeamScoresAvg > mikesTeamScoresAvg && marysTeamScoresAvg > johnsTeamScoresAvg:
   console.log("Mary's team has the highest average score per game of " + marysTeamScoresAvg);
  break;
  default:
