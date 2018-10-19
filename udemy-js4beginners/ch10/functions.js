@@ -7,6 +7,9 @@ function firstName() {
  {
   document.getElementById('firstError').innerHTML = "<-- First name can't be empty";
   document.getElementById('firstName').style['background-color'] = "red";
+ } else if ( first.length <= 2 ) {
+  document.getElementById('firstError').innerHTML = "<-- First name must be more than 2 characters."
+  document.getElementById('firstName').style['background-color'] = "red";
  } else {
   document.getElementById('firstError').innerHTML = null;
   document.getElementById('firstName').removeAttribute("style");
