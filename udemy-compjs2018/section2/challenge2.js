@@ -1,4 +1,4 @@
-var johnsTeamScores = [89,120,103];
+var johnsTeamScores = [89,120,124];
 var mikesTeamScores = [116,94,123];
 
 var johnsTeamScoresAvg = calculateAvgScores(johnsTeamScores);
