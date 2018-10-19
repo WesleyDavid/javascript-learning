@@ -22,7 +22,7 @@ switch (true) {
  case johnsTeamScoresAvg === marysTeamScoresAvg && johnsTeamScoresAvg !== mikesTeamScoresAvg:
   console.log("John and Mary's teams have tied for highest scoring average at " + marysTeamScoresAvg);
   break;
- case marysTeamScoresAvg === mikesTeamScoresAvg && marysTeamScoresAvg !== johnsTeamScoresAvg):
+ case marysTeamScoresAvg === mikesTeamScoresAvg && marysTeamScoresAvg !== johnsTeamScoresAvg:
   console.log("Mary and Mike's teams have tied for highest scoring average at " + marysTeamScoresAvg);
   break;
  case marysTeamScoresAvg === mikesTeamScoresAvg && marysTeamScoresAvg === johnsTeamScoresAvg:
