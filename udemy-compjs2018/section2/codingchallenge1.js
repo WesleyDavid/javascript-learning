@@ -1,8 +1,8 @@
 var markHeight, markWeight, markBMI, johnHeight, johnWeight, johnBMI;
 markHeight = 1.81;
-markWeight = 74;
+markWeight = 81;
 johnHeight = 1.76;
-johnWeight = 81;
+johnWeight = 72;
 
 markBMI = markWeight / (markHeight * 2);
 johnBMI = johnWeight / (johnHeight * 2);
