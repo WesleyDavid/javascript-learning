@@ -7,8 +7,10 @@ switch (true) {
  default:
   console.log("You can drive!");
 }
-/*
+
 switch (age) {
- case 
+ case age < 16:
+  console.log("You cannot drive.");
+ default:
+  console.log("You can drive!");
 }
-*/
