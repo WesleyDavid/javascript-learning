@@ -5,8 +5,11 @@ function firstName() {
 
  if (first === null || first === "")
  {
-  alert("First name can't be empty!");
-  document.getElementById('firstError').innerHTML = "<b><-- First name can't be empty</b>";
+  document.getElementById('firstError').innerHTML = "<-- First name can't be empty";
+  document.getElementById('firstName').style.background-color = "red";
+ } else {
+  document.getElementById('firstError').innerHTML = null;
+  document.getElementById('firstName').removeAttribute("style");
  }
 } // End firstName()
 
