@@ -21,6 +21,9 @@ function lastName() {
  {
   document.getElementById('lastNameError').innerHTML = "<-- Last name can't be empty";
   document.getElementById('lastName').style['background-color'] = "red";
+ } else if ( last <= 2 ) {
+  document.getElementById('lastNameError').innerHTML = "<-- Last name must be more than 2 characters."
+  document.getElementById('lastName').style['background-color'] = "red";
  } else {
   document.getElementById('lastNameError').innerHTML = null;
   document.getElementById('lastName').removeAttribute("style");
