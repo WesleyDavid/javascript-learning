@@ -34,5 +34,5 @@ var totalBills = calculateTotalBills( allBills, allTips );
 console.log(allBills, allTips, totalBills);
 
 for (x in totalBills) {
- console.log("Meal #" + (x+1) + " cost $" + allBills[x] + " and incurred a tip percentage of %" + allTips[x] + ". The total bill was then " + totalBills[x] + ".");
+ console.log("Meal #" + (++x) + " cost $" + allBills[x] + " and incurred a tip percentage of %" + allTips[x] + ". The total bill was then " + totalBills[x] + ".");
 }
