@@ -43,7 +43,7 @@ var totalBills = calculateTotalBills( allBills, allTipPercentages );
 
 // Express the bare bills, the tip percentage, the tip amount, and the total bills.
 
-console.log(allBills, allTipPercentages, totalBills);
+console.log(allBills, allTipPercentages, allTips, totalBills);
 
 var i = 1;
 
