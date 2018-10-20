@@ -48,6 +48,6 @@ console.log(allBills, allTipPercentages, allTips, totalBills);
 var i = 1;
 
 for (x in totalBills) {
- console.log("Meal #" + i + " cost $" + allBills[x] + " and incurred a tip percentage of " + (allTipPercentages[x]*100) + "%. The total tip came to $" + allTips[x] + " and the total bill was then " + totalBills[x] + ".");
+ console.log("Meal #" + i + " cost $" + allBills[x] + " and incurred a tip percentage of " + (allTipPercentages[x]*100) + "%. The total tip came to $" + allTips[x] + " and the total bill was then $" + totalBills[x] + ".");
  i++;
 }
