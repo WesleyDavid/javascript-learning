@@ -3,7 +3,7 @@ var john = {
  mass: 72,
  height: 1.72,
  calcBMI: function() {
- self.BMI = self.mass / (self.height * 2);
+ this.BMI = this.mass / (this.height * 2);
  }
 }
 
