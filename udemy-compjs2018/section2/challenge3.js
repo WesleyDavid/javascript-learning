@@ -1,18 +1,29 @@
-function calculateTips ( bills ) {
- var allTips = [];
+function calculateTipPercentages ( bills ) {
+ var allTipPercentages = [];
 
  for (var x = 0; x < bills.length; x++) {
   if (bills[x] < 50) {
-   allTips.push(0.2);
+   allTipPercentages.push(0.2);
   } else if (bills[x] >= 50 && bills[x] < 200) {
-   allTips.push(0.15);
+   allTipPercentages.push(0.15);
   } else {
-   allTips.push(0.1)
+   allTipPercentages.push(0.1)
   }
  } //end for
 
- return allTips;
-} // End calculateTips()
+ return allTipPercentages;
+} // End calculateTipPercentages()
+
+
+function calculateTipAmounts( bills, tips ) {
+ var tipAmmounts = [];
+
+ for (x in bills) {
+  tipAmounts.push(bills[x] * tips[x]);
+ }
+
+ return tipAmounts;
+} // End calculateTipAmounts()
 
 
 function calculateTotalBills ( bills, tips ) {
@@ -23,19 +34,20 @@ function calculateTotalBills ( bills, tips ) {
  } // End for
 
  return totalBills;
-}
+} // End calculateTotalBills()
 
 var allBills = [124, 48, 268];
-var allTips = calculateTips(allBills);
-var totalBills = calculateTotalBills( allBills, allTips );
+var allTipPercentages = calculateTipPercentages(allBills);
+var allTips = calculateTipAmounts(allBills, allTipPercentages);
+var totalBills = calculateTotalBills( allBills, allTipPercentages );
 
 // Express the bare bills, the tip percentage, the tip amount, and the total bills.
 
-console.log(allBills, allTips, totalBills);
+console.log(allBills, allTipPercentages, totalBills);
 
 var i = 1;
 
 for (x in totalBills) {
- console.log("Meal #" + i + " cost $" + allBills[x] + " and incurred a tip percentage of %" + (allTips[x]*100) + ". The total bill was then " + totalBills[x] + ".");
+ console.log("Meal #" + i + " cost $" + allBills[x] + " and incurred a tip percentage of " + (allTipPercentages[x]*100) + "%. The total tip came to $" + allTips[x] + " and the total bill was then " + totalBills[x] + ".");
  i++;
 }
