@@ -10,8 +10,8 @@ var john = {
 
 var mark = new Object();
 mark.fullName = "Mark Richards";
-mark.mass = 68;
-mark.height = 1.68;
+mark.mass = 72;
+mark.height = 1.72;
 mark.calcBMI = function() {
  this.BMI = this.mass / (this.height *2);
  return this.BMI;
