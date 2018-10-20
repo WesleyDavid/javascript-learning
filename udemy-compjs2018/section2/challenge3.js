@@ -16,7 +16,7 @@ function calculateTipPercentages ( bills ) {
 
 
 function calculateTipAmounts( bills, tips ) {
- var tipAmmounts = [];
+ var tipAmounts = [];
 
  for (x in bills) {
   tipAmounts.push(bills[x] * tips[x]);
