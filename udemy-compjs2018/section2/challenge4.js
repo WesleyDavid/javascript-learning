@@ -2,9 +2,9 @@ var john = {
  fullName: "John Smith",
  mass: 72,
  height: 1.72,
- calcBMI = function() {
+ calcBMI: function() {
  self.BMI = self.mass / (self.height * 2);
-}
+ }
 }
 
 var mark = new Object();
