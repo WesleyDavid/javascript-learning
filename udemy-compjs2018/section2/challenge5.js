@@ -16,6 +16,32 @@ var familyFood = {
  } // End calcTips method
 } // End familyFood object
 
+var marksFamily = {
+ bills: [77, 375, 110, 45]
+} // End marksFamily
+
+function calcTipAverage( tips ) {
+var totalAmount;
+
+ for (x in tips) {
+  totalAmount += tips[x];
+ }
+
+ return totalAmount / tips.length;
+}
+
+
 console.log(familyFood);
 familyFood.calcTips();
 console.log(familyFood);
+
+console.log("John's family tipped an average of $" + calcTipAverage( familyFood.bills ) );
+console.log("Mark's family tipped an average of $" + calcTipAverage( marksFamily.bills ) );
+
+if (calcTipAverage( familyFood.bills ) > calcTipAverage( marksFamily.bills ) {
+ console.log("John's family tips more than Mark's family.");
+} else if (calcTipAverage( marksFamily.bills ) > calcTipAverage( familyFood.bills )) {
+ console.log("Mark's family tips more than John's family.");
+} else {
+ console.log("John and Mark's family tip the exact same amount on average.");
+}
