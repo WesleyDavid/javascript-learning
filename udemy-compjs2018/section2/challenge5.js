@@ -12,7 +12,7 @@ var familyFood = {
     this.tipAmounts.push(this.bills[x] * 0.1);
    }
    this.billsPlusTips.push(this.bills[x] + this.tipAmounts[x]);
-  } //End for loop
+  } // End for loop
  } // End calcTips method
 } // End familyFood object
 
@@ -21,12 +21,10 @@ var marksFamily = {
 } // End marksFamily
 
 function calcTipAverage( tips ) {
-var totalAmount;
-
+var totalAmount=0;
  for (x in tips) {
   totalAmount += tips[x];
  }
-
  return totalAmount / tips.length;
 }
 
