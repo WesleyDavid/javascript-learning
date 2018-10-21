@@ -38,7 +38,7 @@ console.log(familyFood);
 console.log("John's family tipped an average of $" + calcTipAverage( familyFood.bills ) );
 console.log("Mark's family tipped an average of $" + calcTipAverage( marksFamily.bills ) );
 
-if (calcTipAverage( familyFood.bills ) > calcTipAverage( marksFamily.bills ) {
+if (calcTipAverage( familyFood.bills ) > calcTipAverage( marksFamily.bills ) ) {
  console.log("John's family tips more than Mark's family.");
 } else if (calcTipAverage( marksFamily.bills ) > calcTipAverage( familyFood.bills )) {
  console.log("Mark's family tips more than John's family.");
