@@ -8,4 +8,5 @@ function firstTier() {
  secondTier();
 } // End firstTier()
 
-firstTier();
+// firstTier();
+window.firstTier();
