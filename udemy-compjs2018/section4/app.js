@@ -17,3 +17,7 @@ scores = [0,0];
 roundScore = 0;
 activePlayer = 0;
 dice = 6;
+
+for (var i = 0; i < 20; i++) {
+ console.log(Math.floor((Math.random() * 6) + 1));
+}
