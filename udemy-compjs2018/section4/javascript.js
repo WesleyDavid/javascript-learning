@@ -32,22 +32,11 @@ for (r in twoRolls) {
  document.write((parseInt(r)+2) + ": " + twoRolls[r] + " times.<br/>");
 }
 
-/*
-var twoDice = new Array(2);
-for (i = 0; i < 2; i++) {
- twoDice[i] = new Array(6);
-};
-
-for (var i = 0; i < numRolls; i++) {
- twoDice[0][Math.floor((Math.random() * 6))]++;
- twoDice[1][Math.floor((Math.random() * 6))]++;
-}
-
-document.write("After " + numRolls + " rolls of two six-sided die, here are the numbers that were rolled:<br/>");
-
-for (r in twoDice){
- for (rr in twoDice[r]) {
-  
+document.write("<br/>Let's visualize this: <br/>");
+for (r in twoRolls) {
+ document.write((parseInt(r)+2) + ": ");
+ for (var i = 0; i < twoRolls[r]; i++) {
+  document.write("x");
  }
+ document.write("<br/>");
 }
-*/
