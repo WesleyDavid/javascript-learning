@@ -40,3 +40,6 @@ simpleObject = {
 
 simpleObject.simpleMethod();
 simpleObject.innerObject.innerMethod();
+
+console.log("Going to print a function, rather than call it:");
+console.log(simpleObject.simpleMethod);
