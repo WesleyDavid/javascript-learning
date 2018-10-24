@@ -12,7 +12,8 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, gamePlaying, lastRoll;
+var scores, roundScore, activePlayer, gamePlaying, lastRoll, debugMode;
+debugMode = true;
 initGame();
 
 /*******************
@@ -24,29 +25,33 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
  if (gamePlaying) {
   var dice = Math.floor(Math.random() * 6) + 1;
   var diceDOM = document.querySelector(".dice");
-
-  /*
-  This is one way to simplify the harsh if logic below. Then just check for the truth of doubleSix.
-  if ((lastRoll === 6) && (dice === 6)) {
-   var doubleSix = true; // Loses value when function returns, so will go back to undefined and be ready for the next click.
+  if (debugMode) {
+   console.log("Current roll: " + dice);
+   if (lastRoll === 0) {
+    console.log("Last roll: There was no previous roll for the active player.");
+   } else {
+    console.log("Last roll: " + lastRoll);
+   }
   }
-  */
 
   diceDOM.style.display = "block";
   diceDOM.src = "dice-" + dice + ".png";
 
-  if (dice !== 1 && !(((lastRoll === 6) && (dice === 6)))) { // The logic here is hard to read. I could simplify it with more lines and a var above I gues. ¯\_(ツ)_/¯
-   roundScore += dice;
-   lastRoll = dice;
-   document.querySelector('#current-' + activePlayer).textContent = roundScore;
-  } else if (lastRoll === 6 && dice === 6) {
+  if ( (lastRoll === 6) && (dice === 6) ) {
    scores[activePlayer] = 0;
    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
    nextPlayer();
-  } else {
+   if (debugMode) { console.log("There were two sixes in a row. Erasing total and round scores and moving on to the next player."); }
+  } else if ( dice === 1 ) {
+   if (debugMode) { console.log("There was a 1 rolled. Erasing round score and moving to next player."); }
    nextPlayer();
+  } else {
+   roundScore += dice;
+   lastRoll = dice;
+   document.querySelector('#current-' + activePlayer).textContent = roundScore;
+   if (debugMode) { console.log("There was a good number rolled. Adding scores and allowing another roll."); }
   }
- }
+ } // End if gamePlaying
 }); // End roll button event listener
 
 // Hold button
