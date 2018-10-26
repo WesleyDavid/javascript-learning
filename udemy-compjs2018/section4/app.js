@@ -13,6 +13,7 @@ GAME RULES:
 */
 
 var scores, roundScore, activePlayer, gamePlaying, lastRoll, winningScore, debugMode;
+winningScore = 100;
 debugMode = true;
 initGame();
 
@@ -72,8 +73,8 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
   } else {
    nextPlayer();
   }
- }
-});
+ } // End if gamePlaying
+}); // End hold button event listener
 
 // New Game Button
 document.querySelector(".btn-new").addEventListener("click", initGame);
@@ -81,20 +82,18 @@ document.querySelector(".btn-new").addEventListener("click", initGame);
 // Score input
 document.getElementById("scoreInput").addEventListener("keypress", function() {
   var numOnly = /[0-9]/g;
-  //Probably need to mod the DOM to print the winning score somewhere, like the default text box number?
-  if (event.key == "Enter") {
-   var numbers = parseInt((this.value.match(numOnly)).join(''));
-   console.log("Howdy! The return key was pressed, so Here's the event: " + event);
-   // if (this.value 
-   console.log("Also, here's the value of the field: " + this.value);
-   // Should probably check if it's a number. Also remove spaces?
-   console.log("Here's my attempt at regex: " + numbers);
-   winningScore = numbers;
+
+  if (event.key === "Enter") {
+   winningScore = parseInt((this.value.match(numOnly)).join(''));
+   if (debugMode) {
+    console.log("Howdy! The return key was pressed, so Here's the event: " + event);
+    console.log("Also, here's the value of the field: " + this.value);
+    console.log("Here's what it was after my regex was applied: " + winningScore);
+   }
+   initGame();
   }
-  // Probably need to call initGame and start over? No, this isn't elegant as a game at all.
 });
 
- // Display the winning score somewhere.
 
 /*************
  * FUNCTIONS *
@@ -119,8 +118,8 @@ function initGame() {
  activePlayer = 0;
  gamePlaying = true;
  lastRoll = 0;
- winningScore = 100; 
 
+ document.getElementById("winning-score").textContent = "Winning Score: " + winningScore;
  document.getElementById("score-0").textContent = "0";
  document.getElementById("score-1").textContent = "0";
  document.getElementById("current-0").textContent = "0";
@@ -133,4 +132,5 @@ function initGame() {
  document.querySelector(".player-1-panel").classList.remove("active");
  document.querySelector(".player-0-panel").classList.remove("active");
  document.querySelector(".player-0-panel").classList.add("active");
+ if (debugMode) { console.log("After initGame(), the winning score is: " + winningScore); }
 }
