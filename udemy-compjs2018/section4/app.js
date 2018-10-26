@@ -12,7 +12,7 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, gamePlaying, lastRoll, debugMode;
+var scores, roundScore, activePlayer, gamePlaying, lastRoll, winningScore, debugMode;
 debugMode = true;
 initGame();
 
@@ -63,7 +63,7 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
  
   // Did player win?
  
-  if (scores[activePlayer] >= 20) {
+  if (scores[activePlayer] >= winningScore) {
    document.getElementById('name-' + activePlayer).textContent = "WINNER!"
    document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
    document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -78,6 +78,23 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
 // New Game Button
 document.querySelector(".btn-new").addEventListener("click", initGame);
 
+// Score input
+document.getElementById("scoreInput").addEventListener("keypress", function() {
+  var numOnly = /[0-9]/g;
+  //Probably need to mod the DOM to print the winning score somewhere, like the default text box number?
+  if (event.key == "Enter") {
+   var numbers = parseInt((this.value.match(numOnly)).join(''));
+   console.log("Howdy! The return key was pressed, so Here's the event: " + event);
+   // if (this.value 
+   console.log("Also, here's the value of the field: " + this.value);
+   // Should probably check if it's a number. Also remove spaces?
+   console.log("Here's my attempt at regex: " + numbers);
+   winningScore = numbers;
+  }
+  // Probably need to call initGame and start over? No, this isn't elegant as a game at all.
+});
+
+ // Display the winning score somewhere.
 
 /*************
  * FUNCTIONS *
@@ -102,6 +119,7 @@ function initGame() {
  activePlayer = 0;
  gamePlaying = true;
  lastRoll = 0;
+ winningScore = 100; 
 
  document.getElementById("score-0").textContent = "0";
  document.getElementById("score-1").textContent = "0";
