@@ -24,10 +24,13 @@ initGame();
 // Roll button
 document.querySelector(".btn-roll").addEventListener("click", function() {
  if (gamePlaying) {
-  var dice = Math.floor(Math.random() * 6) + 1;
-  var diceDOM = document.querySelector(".dice");
+  var dice1 = Math.floor(Math.random() * 6) + 1;
+  var dice2 = Math.floor(Math.random() * 6) + 1;
+  var diceSum = dice1+dice2;
+  var dice1DOM = document.querySelector(".dice-1");
+  var dice2DOM = document.querySelector(".dice-2");
   if (debugMode) {
-   console.log("Current roll: " + dice);
+   console.log("Current roll: a " + dice1 + " and a " + dice2 );
    if (lastRoll === 0) {
     console.log("Last roll: There was no previous roll for the active player.");
    } else {
@@ -35,20 +38,22 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
    }
   }
 
-  diceDOM.style.display = "block";
-  diceDOM.src = "dice-" + dice + ".png";
+  dice1DOM.style.display = "block";
+  dice2DOM.style.display = "block";
+  dice1DOM.src = "dice-" + dice1 + ".png";
+  dice2DOM.src = "dice-" + dice2 + ".png";
 
-  if ( (lastRoll === 6) && (dice === 6) ) {
+  if ( (lastRoll === 12) && (diceSum === 12) ) {
    scores[activePlayer] = 0;
    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
    nextPlayer();
-   if (debugMode) { console.log("There were two sixes in a row. Erasing total and round scores and moving on to the next player."); }
-  } else if ( dice === 1 ) {
+   if (debugMode) { console.log("There were two double sixes in a row. Erasing total and round scores and moving on to the next player."); }
+  } else if ( dice1 === 1 || dice2 === 1 ) {
    if (debugMode) { console.log("There was a 1 rolled. Erasing round score and moving to next player."); }
    nextPlayer();
   } else {
-   roundScore += dice;
-   lastRoll = dice;
+   roundScore += diceSum;
+   lastRoll = diceSum;
    document.querySelector('#current-' + activePlayer).textContent = roundScore;
    if (debugMode) { console.log("There was a good number rolled. Adding scores and allowing another roll."); }
   }
@@ -68,7 +73,8 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
    document.getElementById('name-' + activePlayer).textContent = "WINNER!"
    document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
    document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-   document.querySelector('.dice').style.display = 'none';
+   document.querySelector('.dice-1').style.display = 'none';
+   document.querySelector('.dice-2').style.display = 'none';
    gamePlaying = false;
   } else {
    nextPlayer();
@@ -108,7 +114,8 @@ function nextPlayer() {
  document.getElementById('current-1').textContent = '0';
  document.querySelector('.player-0-panel').classList.toggle('active');
  document.querySelector('.player-1-panel').classList.toggle('active');
- document.querySelector('.dice').style.display = 'none';
+ document.querySelector('.dice-1').style.display = 'none';
+ document.querySelector('.dice-2').style.display = 'none';
 }
 
 
@@ -124,7 +131,8 @@ function initGame() {
  document.getElementById("score-1").textContent = "0";
  document.getElementById("current-0").textContent = "0";
  document.getElementById("current-1").textContent = "0";
- document.querySelector(".dice").style.display = "none";
+ document.querySelector(".dice-1").style.display = "none";
+ document.querySelector(".dice-2").style.display = "none";
  document.getElementById("name-0").textContent = "Player 1";
  document.getElementById("name-1").textContent = "Player 2";
  document.querySelector(".player-0-panel").classList.remove("winner");
