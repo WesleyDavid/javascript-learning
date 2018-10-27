@@ -42,3 +42,38 @@ var desk1, desk2, desk3;
 desk1 = new Desk(8, "southeast porch");
 desk2 = new Desk(10, "southeast porch");
 desk3 = new Desk(12, "southeast porch");
+
+
+/* 
+  Closure test idea:
+  Make a function in a function in a function in a function that prints the topmost function. Then call the innermost function.
+*/
+
+// I don't know if this is a closure, and I'm 200% sure I'm not making a deeply nested function return right. Needs more thought.
+
+function topmostFunction () {
+ var topString = "This is a string in the topmost function."
+ console.log(topString);
+
+ return function() { 
+  var secondString = "This is a string in the second function; the first inner function."
+  console.log(secondString);
+  console.log("I'm still the second function, but I'm going to use a variable declared in the top function: " + topString);
+
+  return function() {
+   var thirdString = "This is a string in the third function; the second inner function."
+   console.log(thirdString);
+   console.log("I'm still in the third function, but I'm going to use a variable declared in the second function: " + secondString);
+   console.log("I'm still in the third function, but I'm also going to use a variable in the topmost function: " + topString);
+
+   return function() {
+    var fourthString = "This is a string in the fourth function; the third inner function."
+    console.log(fourthString);
+    console.log("I'm still in the fourth function, the third inner function, and to save space I'll just print the topmost function's string: " + topString );
+   }
+  }
+ }
+}
+
+var functionception = topmostFunction();
+functionception();
