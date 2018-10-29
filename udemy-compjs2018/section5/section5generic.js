@@ -1,23 +1,22 @@
 // Section 5 generic JS tweaking
 
 
-/* Playing with what 'this' is in different contexts.
+// Playing with what 'this' is in different contexts.
 
 console.log("'this' in the context of the main body of the javascript file: " + this);
 
-function thisTest() {
+(function thisTest() {
  console.log("'this' in the context of a function defined and run within the main javascript file: " + this);
-}; thisTest();
+})();
 
 var thisFunctExpTest = function() {
  console.log("'this' in the context of a function expression: " + this);
- this.whatIsThis = function () { return console.log("'this in the context of a property within the function: " + this); }
+ this.whatIsThis = function () { return console.log("'this' in the context of a property within the function: " + this); }
 };
 // thisFunctExpTest(); // [object Window]
 
-var thisFunctVarTest = new thisFunctExpTest(); // Runs the first console.log as [object Object]
-thisFunctVarTest.whatIsThis(); // Runs second console.log as [object Object]
-*/
+var thisFunctVarTest = new thisFunctExpTest();
+thisFunctVarTest.whatIsThis();
 
 // Object and prototype test
 
@@ -51,29 +50,27 @@ desk3 = new Desk(12, "southeast porch");
 
 // I don't know if this is a closure, and I'm 200% sure I'm not making a deeply nested function return right. Needs more thought.
 
-function topmostFunction () {
+var functionception = function () {
  var topString = "This is a string in the topmost function."
- console.log(topString);
+ 
+ function second() {
+  var secondLevelVar = "This is a second level var."
 
- return function() { 
-  var secondString = "This is a string in the second function; the first inner function."
-  console.log(secondString);
-  console.log("I'm still the second function, but I'm going to use a variable declared in the top function: " + topString);
+  function third() {
+   var thirdLevelVar = "This is a third level var."
 
-  return function() {
-   var thirdString = "This is a string in the third function; the second inner function."
-   console.log(thirdString);
-   console.log("I'm still in the third function, but I'm going to use a variable declared in the second function: " + secondString);
-   console.log("I'm still in the third function, but I'm also going to use a variable in the topmost function: " + topString);
-
-   return function() {
-    var fourthString = "This is a string in the fourth function; the third inner function."
-    console.log(fourthString);
-    console.log("I'm still in the fourth function, the third inner function, and to save space I'll just print the topmost function's string: " + topString );
+   function fourth () {
+    var fourthLevelVar = "This is a fourth level var."
+    console.log(topString);
    }
+   fourth();
   }
+  third();
  }
+ second();
 }
 
-var functionception = topmostFunction();
+functionception();
+functionception();
+functionception();
 functionception();
