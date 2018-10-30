@@ -52,7 +52,8 @@ desk3 = new Desk(12, "southeast porch");
 
 var functionception = function () {
  var topString = "This is a string in the topmost function."
- 
+ var modify;
+
  function second() {
   var secondLevelVar = "This is a second level var."
 
@@ -61,16 +62,24 @@ var functionception = function () {
 
    function fourth () {
     var fourthLevelVar = "This is a fourth level var."
-    console.log(topString);
+    var foo;
+    console.log(topString + " But it was called in the fourth function!");
+    if ( parseInt((foo = prompt("What should I change the var to?"))) === 0 ) {
+     console.log("The modified value is: " + modify);
+    } else {
+     modify = foo;
+    }
    }
    fourth();
   }
   third();
  }
  second();
+ console.log("At the end of the function, modify is: " + modify);
 }
 
 functionception();
+var functionception2 = functionception;
+functionception2();
 functionception();
-functionception();
-functionception();
+
