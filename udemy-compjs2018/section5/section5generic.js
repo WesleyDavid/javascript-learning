@@ -13,8 +13,10 @@ var thisFunctExpTest = function() {
  console.log("'this' in the context of a function expression: " + this);
  this.whatIsThis = function () { return console.log("'this' in the context of a property within the function: " + this); }
 };
-// thisFunctExpTest(); // [object Window]
+console.log("Here comes thisFunctExpTest() called from the main body: ");
+thisFunctExpTest(); // [object Window]
 
+console.log("Here comes a new object made from thisFunctExpTest():");
 var thisFunctVarTest = new thisFunctExpTest();
 thisFunctVarTest.whatIsThis();
 
@@ -49,18 +51,19 @@ desk3 = new Desk(12, "southeast porch");
 */
 
 // I don't know if this is a closure, and I'm 200% sure I'm not making a deeply nested function return right. Needs more thought.
-
+console.log("---------------");
+console.log("Here comes some closure testing!");
 var functionception = function () {
  var topString = "This is a string in the topmost function."
  var modify;
 
- function second() {
+ var deepFunction = function () {
   var secondLevelVar = "This is a second level var."
 
-  function third() {
+  var deepFunction2 = function () {
    var thirdLevelVar = "This is a third level var."
 
-   function fourth () {
+   var deepFunction3 = function () {
     var fourthLevelVar = "This is a fourth level var."
     var foo;
     console.log(topString + " But it was called in the fourth function!");
@@ -70,16 +73,12 @@ var functionception = function () {
      modify = foo;
     }
    }
-   fourth();
+   return deepFunction3();
   }
-  third();
+  return deepFunction2();
  }
- second();
- console.log("At the end of the function, modify is: " + modify);
+ return deepFunction();
 }
 
-functionception();
 var functionception2 = functionception;
 functionception2();
-functionception();
-
