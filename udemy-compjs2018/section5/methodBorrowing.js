@@ -5,6 +5,7 @@ var dice = {
  lastRoll: 0,
  roll: function () {
   console.log("You just rolled! Also, you are: " + this.name);
+
  }
 };
 dice.roll();
