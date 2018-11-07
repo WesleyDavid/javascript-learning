@@ -2,7 +2,7 @@
  * Dorky quiz. This is the final exercise for section 5 of Jonas Schmedtmann's udemy course
  */
 
-(function () { // Giant IIFE to make the game modular and not interfere with anyone else's code that may want to import it.
+//(function () { // Giant IIFE to make the game modular and not interfere with anyone else's code that may want to import it.
  
  /*************************
   *  Function Constructors
@@ -50,8 +50,12 @@
   this.currentScore++;
  }
 
- GameState.prototype.displayScore = function() {
-  console.log("Your current score is: " + this.currentScore);
+ GameState.prototype.displayScore = function(intOnly) {
+  if (intOnly) {
+   return this.currentScore;
+  } else {
+   console.log("Your current score is: " + this.currentScore);
+  }
  }
 
 
@@ -104,11 +108,11 @@ while (currentGame.isPlaying  === true) {
   if (userAnswer === null) {
    continue;
   } else if (userAnswer.toLowerCase() === "exit") {
-   gamePlaying = false;
-   console.log("Thanks for playing!");
+   currentGame.isPlaying = false;
+   console.log("Thanks for playing! Your final score was: " + currentGame.displayScore(true));
   } else {
    questionList[randomQuestion].checkAnswer(parseInt(userAnswer));
    currentGame.displayScore();
   }
  }
-}) ();
+//}) ();
