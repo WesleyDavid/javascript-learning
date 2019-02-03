@@ -3,8 +3,8 @@ var john = {
  mass: 72,
  height: 1.72,
  calcBMI: function() {
- this.BMI = this.mass / (this.height * 2);
- return this.BMI;
+  this.BMI = this.mass / (this.height * 2);
+  return this.BMI;
  }
 }
 
@@ -29,5 +29,5 @@ if (john.BMI > mark.BMI) {
 } else if (john.BMI < mark.BMI) {
  console.log(mark.fullName + " has a higher BMI than " + john.fullName);
 } else {
- console.log(john.fullName + " and " + mark.fullName + "  have identical BMIs.");
+ console.log(john.fullName + " and " + mark.fullName + " have identical BMIs.");
 }
