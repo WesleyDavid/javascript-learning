@@ -24,8 +24,8 @@ initGame();
 // Roll button
 document.querySelector(".btn-roll").addEventListener("click", function() {
  if (gamePlaying) {
-  var dice1 = Math.floor(Math.random() * 6) + 1;
-  var dice2 = Math.floor(Math.random() * 6) + 1;
+  var dice1 = Math.ceil(Math.random() * 6);
+  var dice2 = Math.ceil(Math.random() * 6);
   var diceSum = dice1+dice2;
   var dice1DOM = document.querySelector(".dice-1");
   var dice2DOM = document.querySelector(".dice-2");
@@ -35,8 +35,8 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
     console.log("Last roll: There was no previous roll for the active player.");
    } else {
     console.log("Last roll: " + lastRoll);
-   }
-  }
+   } // End if lastRoll
+  } // End if debugMode
 
   dice1DOM.style.display = "block";
   dice2DOM.style.display = "block";
@@ -95,9 +95,9 @@ document.getElementById("scoreInput").addEventListener("keypress", function() {
     console.log("Howdy! The return key was pressed, so Here's the event: " + event);
     console.log("Also, here's the value of the field: " + this.value);
     console.log("Here's what it was after my regex was applied: " + winningScore);
-   }
+   } // End if debugMode
    initGame();
-  }
+  } // End if event.key === "Enter"
 });
 
 
