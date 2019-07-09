@@ -121,6 +121,17 @@ var UIController = (function() {
             // Insert HTML into the DOM
 
             document.querySelector(element).insertAdjacentHTML('beforeend', newHTML);
+        }, // End addListItem public method
+
+        clearFields: function() {
+            var fields = document.querySelectorAll(DOMStrings.inputDescription + ','+ DOMStrings.inputValue);
+            var fieldsArr = Array.prototype.slice.call(fields); // fields is a list, and needs to be cast to an array to use forEach below
+
+            fieldsArr.forEach(function(current,i,wholeArray) {
+                current.value='';
+            });
+
+            fieldsArr[0].focus();
         },
 
         DOMStrings: DOMStrings // I deviate from the instruction here. See lecture 79, timestamp 14:30
@@ -149,8 +160,9 @@ var controller = (function(budgetCtrl,UICtrl) {
         console.log(input);
         // Add the item to the budget controller and get an object back to use in the UI controller a bit later.
         newItem = budgetCtrl.addItem(input.type, input.description, input.value);
-        // Add it to the UI.
+        // Add it to the UI and clear the fields.
         UICtrl.addListItem(newItem, input.type)
+        UICtrl.clearFields();
         // Calculate the budget.
         // Display the new budget in the UI.
     };
